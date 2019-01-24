@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#094f8b</color>//Header
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="Categories">#ff4500</color>
+    <color name="Favourites">#ff69b4</color>
+    <color name="Settings">#ffd700</color>
+</resources>
