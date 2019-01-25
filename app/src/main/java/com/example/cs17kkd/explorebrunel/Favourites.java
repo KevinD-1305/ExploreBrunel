@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 public class Favourites extends AppCompatActivity {
     private ActionBar actionBar;
@@ -15,5 +16,7 @@ public class Favourites extends AppCompatActivity {
         setContentView(R.layout.activity_favourites);
         actionBar=getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff69b4")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

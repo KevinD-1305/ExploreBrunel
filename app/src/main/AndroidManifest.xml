@@ -18,13 +18,16 @@
         </activity>
         <activity
             android:name=".Categories"
-            android:label="Categories" />
+            android:label="Categories"
+            android:parentActivityName=".Template"/>
         <activity
             android:name=".Favourites"
-            android:label="Favourites" />
+            android:label="Favourites"
+            android:parentActivityName=".Template"/>
         <activity
             android:name=".Settings"
             android:label="Settings"
+            android:parentActivityName=".Template"
             ></activity>
     </application>
 

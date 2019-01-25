@@ -15,5 +15,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         actionBar=getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffd700")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

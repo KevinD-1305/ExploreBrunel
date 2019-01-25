@@ -15,5 +15,7 @@ public class Categories extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
         actionBar=getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff4500")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }
