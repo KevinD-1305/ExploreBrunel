@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"></activity>
         <activity android:name=".Template">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,16 +22,15 @@
         <activity
             android:name=".Categories"
             android:label="Categories"
-            android:parentActivityName=".Template"/>
+            android:parentActivityName=".Template" />
         <activity
             android:name=".Favourites"
             android:label="Favourites"
-            android:parentActivityName=".Template"/>
+            android:parentActivityName=".Template" />
         <activity
             android:name=".Settings"
             android:label="Settings"
-            android:parentActivityName=".Template"
-            ></activity>
+            android:parentActivityName=".Template" />
     </application>
 
 </manifest>
