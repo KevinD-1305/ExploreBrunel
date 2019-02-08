@@ -1,13 +1,10 @@
 package com.example.cs17kkd.explorebrunel;
 
 import android.content.Intent;
-import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.Locale;
 
 public class Template extends AppCompatActivity {
 
@@ -42,7 +39,7 @@ public class Template extends AppCompatActivity {
         Button but4 = (Button) findViewById(R.id.button4);
         but4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent MainActivity = new Intent(Template.this, com.example.cs17kkd.explorebrunel.MainActivity.class);
+                Intent MainActivity = new Intent(Template.this, Main.class);
                 startActivity(MainActivity);
             }
         });

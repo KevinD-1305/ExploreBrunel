@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"></activity>
-        <activity android:name=".Template">
+            android:name=".Template"
+            android:label="@string/title_activity_main">
+        </activity>
+        <activity
+            android:name=".Main"
+            android:label="Explore Brunel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,15 +25,15 @@
         <activity
             android:name=".Categories"
             android:label="Categories"
-            android:parentActivityName=".Template" />
+            android:parentActivityName=".Main" />
         <activity
             android:name=".Favourites"
             android:label="Favourites"
-            android:parentActivityName=".Template" />
+            android:parentActivityName=".Main" />
         <activity
             android:name=".Settings"
             android:label="Settings"
-            android:parentActivityName=".Template" />
+            android:parentActivityName=".Main" />
     </application>
 
 </manifest>

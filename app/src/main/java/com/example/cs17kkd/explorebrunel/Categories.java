@@ -16,7 +16,7 @@ public class Categories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
         actionBar=getSupportActionBar();//calls action bar
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff4500")));//Color of the action bar
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1A92A7")));//Color of the action bar
         getSupportActionBar().setDisplayShowHomeEnabled(true);//calls action bar
         getSupportActionBar().setIcon(R.drawable.actionbar_categories);//shows the icon on action bar
     }
