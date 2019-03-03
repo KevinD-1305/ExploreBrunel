@@ -51,8 +51,8 @@ public class Main extends AppCompatActivity {
         Button but = (Button) findViewById(R.id.template);
         but.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent template = new Intent(Main.this, com.example.cs17kkd.explorebrunel.Template.class);
-                startActivity(template);
+                Intent map = new Intent(Main.this, com.example.cs17kkd.explorebrunel.MapsActivity.class);
+                startActivity(map);
 
             }
         });
