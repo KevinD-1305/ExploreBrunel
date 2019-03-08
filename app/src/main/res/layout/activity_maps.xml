@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/map"
     android:name="com.google.android.gms.maps.SupportMapFragment"
+    class="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapsActivity" />
+    map:cameraBearing="0"
+    map:cameraTargetLat="51.5328859"
+    map:cameraTargetLng="-0.4751111"
+    tools:context=".Main">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.google.android.gms.maps.MapView
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</fragment>

@@ -1,16 +1,21 @@
 package com.example.cs17kkd.explorebrunel;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -22,9 +27,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
-
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -42,6 +46,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng Brunel = new LatLng(51.5328859, -0.4751111);
         mMap.addMarker(new MarkerOptions().position(Brunel).title("Marker in Brunel"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Brunel));
+
+        // Set a preference for minimum and maximum zoom.
+         LatLngBounds Brunel1 = new LatLngBounds(
+                new LatLng(51.53278, -0.48246), new LatLng(51.53309, -0.46751));
+
+        // Set the camera to the greatest possible zoom level that includes the
+        // bounds
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(Brunel1, 0));
     }
 
 }
