@@ -1,19 +1,18 @@
 package com.example.cs17kkd.explorebrunel;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.support.v4.app.Fragment;
-import android.widget.Button;
 import android.widget.TextView;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,9 +21,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Main extends AppCompatActivity implements OnMapReadyCallback/*implements OnMapReadyCallback*/{
-    private ActionBar actionBar;
-    private TextView mTextMessage;
+
+
+public class Main extends AppCompatActivity implements OnMapReadyCallback {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,8 +49,8 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback/*imple
             return false;
         }
     };
-    private SupportMapFragment map;
     private GoogleMap mMap;
+    PlaceAutocompleteFragment placeAutoComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +61,30 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback/*imple
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        //Sets the bottom navigation bar at the bottom.
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
+
+        //Search bar for the map to search for location.
+
+        placeAutoComplete = (PlaceAutocompleteFragment)getFragmentManager().findFragmentById(R.id.place_autocomplete);
+        placeAutoComplete.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+
+                Log.d("Maps", "Place selected: " + place.getName());
+            }
+
+            @Override
+            public void onError(Status status) {
+                Log.d("Maps", "An error occurred: " + status);
+            }
+        });
+
+        SupportMapFragment mapFragment1 = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment1.getMapAsync(this);
+}
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

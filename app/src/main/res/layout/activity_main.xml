@@ -6,43 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Main">
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation"
         android:background="?android:attr/windowBackground"
-         />
+        app:menu="@menu/navigation"
+        />
 
-    <Button
-        android:id="@+id/template"
-        android:layout_width="wrap_content"
+    <fragment
+        android:id="@+id/place_autocomplete"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="template"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_alignParentTop="true"
+        />
 
     <fragment
         android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment" />
-        />
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation"
+        android:layout_below="@+id/place_autocomplete"
+ />
 
 
 </RelativeLayout>
