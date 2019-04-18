@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.cs17kkd.explorebrunel">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -9,9 +10,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -30,7 +29,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA4WeQnaQt4ze92lahOYN1kDlbwm1Hr1ps"/>
+            android:value="AIzaSyA4WeQnaQt4ze92lahOYN1kDlbwm1Hr1ps" />
 
         <activity
             android:name=".Homepage"
@@ -60,7 +59,7 @@
             android:name=".Settings"
             android:label="Settings"
             android:parentActivityName=".Main" />
-
+        <activity android:name=".DBTestActivity"></activity>
     </application>
 
 </manifest>
