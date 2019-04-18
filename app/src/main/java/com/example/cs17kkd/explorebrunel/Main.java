@@ -1,18 +1,25 @@
 package com.example.cs17kkd.explorebrunel;
 
 import android.content.Intent;
+import android.graphics.Camera;
+import android.location.Address;
+import android.location.Geocoder;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
-import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+//import com.google.android.gms.location.places.Place;
+//import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+//import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.libraries.places.api.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,11 +27,20 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Main extends AppCompatActivity implements OnMapReadyCallback {
-
+    //search text
+    private EditText mSearchText;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         Intent in;
@@ -50,7 +66,7 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         }
     };
     private GoogleMap mMap;
-    PlaceAutocompleteFragment placeAutoComplete;
+    //PlaceAutocompleteFragment placeAutoComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +83,33 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
 
         //Search bar for the map to search for location.
 
-        placeAutoComplete = (PlaceAutocompleteFragment)getFragmentManager().findFragmentById(R.id.place_autocomplete);
-        placeAutoComplete.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        Places.initialize(getApplicationContext(), "AIzaSyCnTBUkfvILavRXaRYMTuJuDUEc4UK6jnM");
+        PlacesClient placesClient = Places.createClient(this);
+
+        if (!Places.isInitialized()) {
+            Places.initialize(getApplicationContext(), "AIzaSyCnTBUkfvILavRXaRYMTuJuDUEc4UK6jnM");
+        }
+
+        // Initialize the AutocompleteSupportFragment.
+        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+                getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
+
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME,Place.Field.LAT_LNG));
+        autocompleteFragment.setCountry("UK");
+        //mSearchText = (EditText) findViewById(R.id.autocomplete_fragment);
+
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Log.d("Maps", "Place selected: " + place.getName());
+                Log.d("Maps", "Place selected: " + place.getName() + place.getLatLng());
+                //Moves camera so to the LatLng of the location entered.
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(place.getLatLng()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 18.0f));
+                //Adds marker to the location and names it.
+                mMap.addMarker(new MarkerOptions().position(place.getLatLng()).title("Marker in " + place.getName()));
+
+
             }
 
             @Override
@@ -85,6 +122,22 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment1.getMapAsync(this);
 }
+    /*private void geoLocate() {
+        //Log.d(TAG, "geoLocate: geoLocating");
+        String searchString = mSearchText.getText().toString();
+        Geocoder geocoder = new Geocoder(Main.this);
+        List<Address> list = new ArrayList<>();
+        try {
+            list = geocoder.getFromLocationName(searchString, 1);
+        }catch (IOException e){
+            //Log.e(TAG, "geoLocate:  IOException:  " + e.getMessage());
+        }
+        if(list.size() > 0) {
+            Address address = list.get(0);
+            //Log.d(TAG, "geoLocate: found a location" + address.toString());
+        }
+    }
+    */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -93,15 +146,15 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         LatLng Brunel = new LatLng(51.5328859, -0.4751111);
         mMap.addMarker(new MarkerOptions().position(Brunel).title("Marker in Brunel"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Brunel));
-
+        mMap.animateCamera(CameraUpdateFactory.zoomBy(13));
+        
         LatLngBounds Brunel1 = new LatLngBounds(
                 new LatLng(51.53278, -0.48246), new LatLng(51.53309, -0.46751));
 
-        // Set the camera to the greatest possible zoom level that includes the
-        // bounds
+        // Set the camera to the greatest possible zoom level that includes the bounds
+        //Limits the Boundaries to only Brunel.
         mMap.setLatLngBoundsForCameraTarget(Brunel1);
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(13));
-        // mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(Brunel1, 0));
+
     }
 }
 
