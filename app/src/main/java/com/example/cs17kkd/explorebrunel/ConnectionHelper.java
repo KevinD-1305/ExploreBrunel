@@ -15,10 +15,10 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public Connection connections() {
 
-        IP = "";
-        DB = "";
-        DBUsername = "";
-        DBPassword = "";
+        IP = "172.17.0.11";
+        DB = "mytestdb";
+        DBUsername = "root";
+        DBPassword = "123";
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

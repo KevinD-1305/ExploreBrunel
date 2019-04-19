@@ -1,5 +1,7 @@
 package com.example.cs17kkd.explorebrunel;
 
+import android.widget.SimpleAdapter;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -32,8 +34,8 @@ public class GetData {
                 while (rs.next()){
                     Map<String,String> datanum=new HashMap<String, String>();
                     datanum.put("ID",rs.getString("PeopleID"));
-                    datanum.put("First Name",rs.getString("FirstName"));
-                    datanum.put("Last Name",rs.getString("LastName"));
+                    datanum.put("First_Name",rs.getString("FirstName"));
+                    datanum.put("Last_Name",rs.getString("LastName"));
                     data.add(datanum);
 
                 }
