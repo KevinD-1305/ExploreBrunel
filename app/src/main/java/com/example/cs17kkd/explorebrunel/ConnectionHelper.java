@@ -15,7 +15,7 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public Connection connections() {
 
-        IP = "127.0.0.1";
+        IP = "192.168.1.149";
         DB = "mytestdb";
         DBUsername = "root";
         DBPassword = "1234";
