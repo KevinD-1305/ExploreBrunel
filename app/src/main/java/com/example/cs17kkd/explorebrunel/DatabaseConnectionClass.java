@@ -14,15 +14,8 @@ public class DatabaseConnectionClass {
     public static final String user = "talhasabir";
     public static final String pswd = "1234";
 
-//    String IP, DB, DBUsername, DBPassword;
-
     @SuppressLint("NewApi")
     public Connection connections() {
-
-//        IP = "172.17.0.20";
-//        DB = "exploreBrunelDB";
-//        DBUsername = "root";
-//        DBPassword = "123";
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

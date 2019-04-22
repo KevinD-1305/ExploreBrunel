@@ -19,10 +19,6 @@ import static com.example.cs17kkd.explorebrunel.DatabaseConnectionClass.user;
 
 public class LectureCentreInfo extends AppCompatActivity {
 
-//    private static final String url = "jdbc:mysql://192.168.1.149:3306/explorebruneldb";
-//    private static final String user = "talhasabir";
-//    private static final String pswd = "1234";
-
     private ActionBar actionBar;
 
     @Override
