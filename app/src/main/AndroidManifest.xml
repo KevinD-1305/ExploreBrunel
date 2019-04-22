@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".buildings"></activity>
+        <activity android:name=".Colour"></activity>
+        <activity android:name=".buildings" />
 
         <uses-library
             android:name="org.apache.http.legacy"
