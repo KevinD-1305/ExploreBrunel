@@ -60,7 +60,7 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
                     in = new Intent(getBaseContext(),Favourites.class);
                     startActivity(in);
                     break;
-                    default:
+                default:
             }
             return false;
         }
@@ -121,7 +121,7 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment1 = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment1.getMapAsync(this);
-}
+    }
     /*private void geoLocate() {
         //Log.d(TAG, "geoLocate: geoLocating");
         String searchString = mSearchText.getText().toString();
@@ -144,16 +144,61 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
 
         // Add a marker in Brunel and move the camera
         LatLng Brunel = new LatLng(51.5328859, -0.4751111);
+        LatLng Wilfred_brown = new LatLng(51.532791, -0.475213);
+        LatLng Eastern_Gateway = new LatLng(51.533347, -0.468689);
+        LatLng Antonlin_Artaud = new LatLng(51.531046, -0.474961);
+        LatLng Mary_Seacole = new LatLng(51.532893, -0.468457);
+        LatLng Bannerman_Centre = new LatLng(51.532751, -0.473927);
+        LatLng Halsbury = new LatLng(51.534211, -0.4729280);
+        LatLng Lecture_Centre = new LatLng(51.533245, -0.472851);
+        LatLng Joseph_Lowe = new LatLng(51.530925, -0.474071);
+        LatLng Heinz_Wolff = new LatLng(51.534145, -0.474734);
+        LatLng Gaskell = new LatLng(51.533003, -0.477658);
+
+
+
+
         mMap.addMarker(new MarkerOptions().position(Brunel).title("Marker in Brunel"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Brunel));
         mMap.animateCamera(CameraUpdateFactory.zoomBy(13));
-        
+
         LatLngBounds Brunel1 = new LatLngBounds(
                 new LatLng(51.53278, -0.48246), new LatLng(51.53309, -0.46751));
 
         // Set the camera to the greatest possible zoom level that includes the bounds
         //Limits the Boundaries to only Brunel.
         mMap.setLatLngBoundsForCameraTarget(Brunel1);
+
+
+        mMap.addMarker(
+                new MarkerOptions().position(Wilfred_brown).title("Wilfred Brown"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Eastern_Gateway).title("Eastern Gateway"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Antonlin_Artaud).title("Antonlin Artaud"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Mary_Seacole).title("Mary Seacole"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Bannerman_Centre).title("Bannerman Centre"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Halsbury).title("Halsbury"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Lecture_Centre).title("Lecture Centre"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Joseph_Lowe).title("Joseph Lowe"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Gaskell).title("Heinz_Wolff"));
+
+        mMap.addMarker(
+                new MarkerOptions().position(Gaskell).title("Gaskell"));
 
     }
 }
