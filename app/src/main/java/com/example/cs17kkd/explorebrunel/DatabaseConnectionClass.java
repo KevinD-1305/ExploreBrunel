@@ -2,7 +2,6 @@ package com.example.cs17kkd.explorebrunel;
 
 import android.annotation.SuppressLint;
 import android.os.StrictMode;
-import android.test.suitebuilder.annotation.Suppress;
 import android.util.Log;
 
 import java.sql.Connection;
