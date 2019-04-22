@@ -44,7 +44,7 @@ public class Settings extends AppCompatActivity {
     }
 
     private void showLangDialog(){
-        final String [] listItems = {"Chinese", "Arab", "English"};
+        final String [] listItems = {"Mandarin 普通话", "Arabic عربى", "English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(Settings.this);
         mBuilder.setTitle("Change Language to: ");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
