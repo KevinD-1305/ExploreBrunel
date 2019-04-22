@@ -17,7 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LectureCentreInfo"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -67,6 +66,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LectureCentreInfo"
+            android:parentActivityName=".Main">
+        </activity>
+
     </application>
 
 </manifest>

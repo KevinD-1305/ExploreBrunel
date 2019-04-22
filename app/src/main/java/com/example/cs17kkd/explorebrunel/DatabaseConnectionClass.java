@@ -9,15 +9,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnectionClass {
-    String IP, DB, DBUsername, DBPassword;
+
+    public static final String dburl = "jdbc:mysql://192.168.1.149:3306/explorebruneldb";
+    public static final String user = "talhasabir";
+    public static final String pswd = "1234";
+
+//    String IP, DB, DBUsername, DBPassword;
 
     @SuppressLint("NewApi")
     public Connection connections() {
 
-        IP = "172.17.0.20";
-        DB = "exploreBrunelDB";
-        DBUsername = "root";
-        DBPassword = "123";
+//        IP = "172.17.0.20";
+//        DB = "exploreBrunelDB";
+//        DBUsername = "root";
+//        DBPassword = "123";
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -25,7 +30,7 @@ public class DatabaseConnectionClass {
         String ConnectionURL = null;
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://" + IP + ";databasename" + DB + ";user=" + DBUsername + ";password=" + DBPassword + ";";
+//            ConnectionURL = "jdbc:jtds:sqlserver://" + IP + ";databasename" + DB + ";user=" + DBUsername + ";password=" + DBPassword + ";";
             connection = DriverManager.getConnection(ConnectionURL);
         } catch (SQLException se) {
             Log.e("error from sql", se.getMessage());

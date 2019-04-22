@@ -227,7 +227,7 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
                 @Override
                 public void onInfoWindowLongClick(Marker marker) {
                     if(marker.getTitle().contains("Lecture Centre")){
-                        Toast.makeText(Main.this, "You Have Clicked the Lecture Centre", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main.this, "The Lecture Centre", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Main.this,LectureCentreInfo.class);
                         startActivity(i);
                         finish();
