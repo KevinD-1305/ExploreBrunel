@@ -7,16 +7,15 @@
     tools:context="com.example.cs17kkd.explorebrunel.Settings">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="400dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="6dp"
-        android:text="Button"
-        android:textAlignment="textStart"
         android:drawableRight="@drawable/right_arrow"
-        app:layout_constraintHorizontal_bias="0.31"
+        android:text="Colour"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,41 +26,41 @@
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="1dp"
+        android:drawableRight="@drawable/right_arrow"
         android:text="Button"
         android:textAlignment="textStart"
-        android:drawableRight="@drawable/right_arrow"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="400dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="1dp"
+        android:drawableRight="@drawable/right_arrow"
         android:text="Button"
         android:textAlignment="textStart"
-        android:drawableRight="@drawable/right_arrow"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
 
     <Button
         android:id="@+id/button4"
         android:layout_width="400dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="1dp"
+        android:drawableRight="@drawable/right_arrow"
         android:text="Button"
         android:textAlignment="viewStart"
-        android:drawableRight="@drawable/right_arrow"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -71,12 +70,12 @@
         android:layout_width="400dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="1dp"
+        android:drawableRight="@drawable/right_arrow"
         android:text="Button"
         android:textAlignment="viewStart"
-        android:drawableRight="@drawable/right_arrow"
-        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
