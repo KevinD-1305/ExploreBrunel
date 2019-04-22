@@ -1,17 +1,16 @@
 package com.example.cs17kkd.explorebrunel;
 
 import android.content.Intent;
-import android.graphics.Camera;
-import android.location.Address;
-import android.location.Geocoder;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
@@ -32,15 +31,14 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 public class Main extends AppCompatActivity implements OnMapReadyCallback {
     //search text
     private EditText mSearchText;
+    //Lecture Centre Marker
+    private Marker lcMarker;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         Intent in;
@@ -66,7 +64,6 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         }
     };
     private GoogleMap mMap;
-    //PlaceAutocompleteFragment placeAutoComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,7 +185,8 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         mMap.addMarker(
                 new MarkerOptions().position(Halsbury).title("Halsbury"));
 
-        mMap.addMarker(
+        //Lecture Centre Marker Object
+        lcMarker = mMap.addMarker(
                 new MarkerOptions().position(Lecture_Centre).title("Lecture Centre"));
 
         mMap.addMarker(
@@ -200,6 +198,45 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
         mMap.addMarker(
                 new MarkerOptions().position(Gaskell).title("Gaskell"));
 
+        if (mMap != null){
+            mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+                @Override
+                public View getInfoWindow(Marker marker) {
+                    return null;
+                }
+
+                @Override
+                public View getInfoContents(Marker marker) {
+                    View v = getLayoutInflater().inflate(R.layout.info_window, null);
+                    TextView nametv = (TextView) v.findViewById(R.id.nameTV);
+                    ImageView markerimg = (ImageView) v.findViewById(R.id.infowindow_icon);
+
+                    nametv.setText(marker.getTitle());
+                    markerimg.setImageDrawable(getResources().getDrawable(R.drawable.lecture_centre_image));
+                    if (marker.getTitle().contains("Lecture Centre")){
+                        markerimg.setImageDrawable(getResources().getDrawable(R.drawable.lecture_centre_image));
+                    }else{
+                        markerimg.setImageDrawable(getResources().getDrawable(R.drawable.app_logo));
+                    }
+                    return v;
+                }
+            });
+
+            //Info window click function
+            mMap.setOnInfoWindowLongClickListener(new GoogleMap.OnInfoWindowLongClickListener() {
+                @Override
+                public void onInfoWindowLongClick(Marker marker) {
+                    if(marker.getTitle().contains("Lecture Centre")){
+                        Toast.makeText(Main.this, "You Have Clicked the Lecture Centre", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(Main.this, marker.getTitle(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+        }
+
     }
-}
+
+
 

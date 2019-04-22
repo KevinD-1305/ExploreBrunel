@@ -5,10 +5,10 @@
     android:orientation="horizontal">
     
     <ImageView
-        android:id="@+id/LC_imageview"
+        android:id="@+id/infowindow_icon"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/lecture_centre_image"
+        android:layout_margin="5dp"
         />
 
     <LinearLayout
@@ -17,16 +17,23 @@
         android:orientation="vertical">
         
         <TextView
-            android:id="@+id/lC_nameTV"
+            android:id="@+id/nameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brunel University Lecture Centre \n"
-            android:textStyle="bold"/>
+            android:text="Name of Building"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click Here for more Info!" />
+            android:text="Click Here for more Info!"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 
