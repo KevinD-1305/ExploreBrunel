@@ -22,5 +22,7 @@
     <string name="social">اجتماعي</string>
     <string name="sport">رياضة</string>
     <string name="toilets">مراحيض</string>
+    <string name="change_lang_string">تغيير اللغة إلى:</string>
+
 
 </resources>

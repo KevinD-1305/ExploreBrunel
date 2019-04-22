@@ -20,4 +20,6 @@
     <string name="social">社会</string>
     <string name="sport">运动</string>
     <string name="toilets">洗手间</string>
+    <string name="change_lang_string">将语言改为：</string>
+
 </resources>

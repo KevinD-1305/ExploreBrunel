@@ -19,5 +19,6 @@
     <string name="social">Social</string>
     <string name="sport">Sport</string>
     <string name="toilets">Toilets</string>
+    <string name="change_lang_string">Change Language to: </string>
 
 </resources>
