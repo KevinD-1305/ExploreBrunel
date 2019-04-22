@@ -21,6 +21,7 @@ public class Favourites extends AppCompatActivity {
         setContentView(R.layout.activity_favourites);
         actionBar=getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff69b4")));
+        getSupportActionBar().setTitle(getResources().getString(R.string.favourites_name));
         getSupportActionBar().setDisplayShowHomeEnabled(true);//calls action bar
         getSupportActionBar().setIcon(R.drawable.favourites);//shows the icon on action bar
 

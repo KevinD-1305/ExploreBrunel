@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Explore Brunel</string>
+    <string name="app_name" translatable="false">Explore Brunel</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -8,5 +8,16 @@
     <string name="title_activity_homepage">Homepage</string>
     <string name="title_activity_maps2">Map</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="MainActivityName">Explore Brunel</string>
+    <string name="favourites_name">Favourites</string>
+    <string name="categories_name">Categories</string>
+    <string name="settings_name">Settings</string>
     <string name="app_version_number">Version 0.0.1</string>
+    <string name="change_language">Change Language</string>
+    <string name="departments">Departments</string>
+    <string name="food_and_drink">Food and Drink</string>
+    <string name="social">Social</string>
+    <string name="sport">Sport</string>
+    <string name="toilets">Toilets</string>
+
 </resources>

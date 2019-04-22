@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Explore Brunel</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="MainActivityName">探索 大学 Brunel</string>
+    <string name="favourites_name">最爱</string>
+    <string name="categories_name">类别</string>
+    <string name="settings_name">设置</string>
+    <string name="app_version_number">版 0.0.1</string>
+    <string name="change_language">改变语言</string>
+    <string name="departments">部门</string>
+    <string name="food_and_drink">饮食</string>
+    <string name="social">社会</string>
+    <string name="sport">运动</string>
+    <string name="toilets">洗手间</string>
+</resources>

@@ -4,16 +4,16 @@
     <item
         android:id="@+id/favourites"
         android:icon="@drawable/favourites"
-        android:title="Favourites" />
+        android:title="@string/favourites_name" />
 
     <item
         android:id="@+id/categories"
         android:icon="@drawable/categories"
-        android:title="Categories" />
+        android:title="@string/categories_name" />
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/settings"
-        android:title="Settings" />
+        android:title="@string/settings_name" />
 
 </menu>

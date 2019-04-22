@@ -45,18 +45,18 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".Main"
-            android:label="Explore Brunel"/>
+            android:label="@string/MainActivityName"/>
         <activity
             android:name=".Categories"
-            android:label="Categories"
+            android:label="@string/categories_name"
             android:parentActivityName=".Main" />
         <activity
             android:name=".Favourites"
-            android:label="Favourites"
+            android:label="@string/favourites_name"
             android:parentActivityName=".Main" />
         <activity
             android:name=".Settings"
-            android:label="Settings"
+            android:label="@string/settings_name"
             android:parentActivityName=".Main" />
         <activity android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
