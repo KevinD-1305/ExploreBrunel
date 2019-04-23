@@ -18,7 +18,7 @@ public class buildings extends AppCompatActivity {
 
            actionBar=getSupportActionBar();//calls actionnbar
            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1A92A7")));//Color of the action bar
-          getSupportActionBar().setTitle("Colleges");
+          getSupportActionBar().setTitle("Academic");
           String title = actionBar.getTitle().toString();
 
         }
