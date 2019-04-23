@@ -17,8 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".buildings"></activity>
-
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
@@ -58,6 +56,14 @@
             android:name=".Settings"
             android:label="Settings"
             android:parentActivityName=".Main" />
+        <activity
+            android:name=".Buildings"
+            android:label="Departments"
+            android:parentActivityName=".Categories" />
+        <activity
+            android:name=".Social"
+            android:label="Social"
+            android:parentActivityName=".Categories" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
