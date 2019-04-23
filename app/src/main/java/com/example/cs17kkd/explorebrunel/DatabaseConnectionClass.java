@@ -10,9 +10,9 @@ import java.sql.SQLException;
 
 public class DatabaseConnectionClass {
 
-    public static final String dburl = "jdbc:mysql://192.168.1.149:3306/explorebruneldb";
-    public static final String user = "talhasabir";
-    public static final String pswd = "1234";
+    public static final String dburl = "jdbc:mysql://192.168.1.149:3306/exploreBrunelDB";
+    public static final String user = "root";
+    public static final String pswd = "123";
 
     @SuppressLint("NewApi")
     public Connection connections() {

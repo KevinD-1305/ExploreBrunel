@@ -42,7 +42,7 @@ public class LectureCentreInfo extends AppCompatActivity {
 
             String result = new String();
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from academic");
+            ResultSet rs = st.executeQuery("select * from Academic where BuildingID=10");
             ResultSetMetaData rsmd = rs.getMetaData();
 
             while(rs.next()){
