@@ -37,6 +37,15 @@ public class Categories extends AppCompatActivity {
                 startActivity(social);
             }
         });
+        
+        final Button button19 = findViewById(R.id.button19);
+        button19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Categories.this, Accommodations.class);
+                startActivity(intent);
+            }
+        });
 
 
 }
