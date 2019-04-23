@@ -195,10 +195,10 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
                 new MarkerOptions().position(Joseph_Lowe).title("Joseph Lowe").snippet("Building for CIVIL ENGINEERING STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Heinz_Wolff).title("Heinz_Wolff").snippet("Building for SPORT SCIENCE STUDENTS"));
+                new MarkerOptions().position(Heinz_Wolff).title("Heinz_Wolff").snippet("Building for SPORT SCIENCE STUDENTS."));
 
         mMap.addMarker(
-                new MarkerOptions().position(Gaskell).title("Gaskell").snippet("Building for PSYCHOLOGY  STUDENTS"));
+                new MarkerOptions().position(Gaskell).title("Gaskell").snippet("Building for PSYCHOLOGY STUDENTS"));
 
     }
 }

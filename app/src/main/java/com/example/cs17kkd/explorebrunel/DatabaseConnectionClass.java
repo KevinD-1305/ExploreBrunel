@@ -1,19 +1,19 @@
 package com.example.cs17kkd.explorebrunel;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+//import android.app.Activity;
 import android.os.StrictMode;
-import android.support.v7.app.AppCompatActivity;
-import android.test.suitebuilder.annotation.Suppress;
+//import android.support.v7.app.AppCompatActivity;
+//import android.test.suitebuilder.annotation.Suppress;
 import android.util.Log;
-import android.widget.TextView;
+//import android.widget.TextView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+//import java.sql.Statement;
+//import java.sql.ResultSet;
+//import java.sql.ResultSetMetaData;
 
 /*public class DatabaseConnectionClass extends AppCompatActivity{
 
