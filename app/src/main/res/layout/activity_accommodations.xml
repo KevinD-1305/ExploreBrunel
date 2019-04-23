@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Accommodations">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="379dp"
+        android:layout_height="55dp"
+        android:text="Bishop complex"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="377dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="faraday hall"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="377dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:text="fleming hall"
+        app:layout_constraintTop_toBottomOf="@+id/button10"
+        tools:layout_editor_absoluteX="17dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="377dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:text="Galbraith hall"
+        app:layout_constraintTop_toBottomOf="@+id/button11"
+        tools:layout_editor_absoluteX="17dp" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="380dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:text="isambard complex"
+        app:layout_constraintTop_toBottomOf="@+id/button12"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="380dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:text="Lancaster complex"
+        app:layout_constraintTop_toBottomOf="@+id/button13"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="385dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:text="Mill Hall"
+        app:layout_constraintTop_toBottomOf="@+id/button14"
+        tools:layout_editor_absoluteX="14dp" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="382dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Clifton hall"
+        app:layout_constraintTop_toBottomOf="@+id/button15"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="380dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="chepstow hall"
+        app:layout_constraintTop_toBottomOf="@+id/button16"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="385dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="saltash hall"
+        app:layout_constraintTop_toBottomOf="@+id/button17"
+        tools:layout_editor_absoluteX="14dp" />
+</android.support.constraint.ConstraintLayout>
