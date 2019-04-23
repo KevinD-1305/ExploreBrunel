@@ -171,35 +171,39 @@ public class Main extends AppCompatActivity implements OnMapReadyCallback {
 
 
         mMap.addMarker(
-                new MarkerOptions().position(Wilfred_brown).title("Wilfred Brown"));
+                new MarkerOptions().position(Wilfred_brown).title("Wilfred Brown").snippet("Building for COMPUTER SCIENCE STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Eastern_Gateway).title("Eastern Gateway"));
+                new MarkerOptions().position(Eastern_Gateway).title("Eastern Gateway").snippet("Building for BUSINESS  STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Antonlin_Artaud).title("Antonlin Artaud"));
+                new MarkerOptions().position(Antonlin_Artaud).title("Antonlin Artaud").snippet("Building for ARTS  STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Mary_Seacole).title("Mary Seacole"));
+                new MarkerOptions().position(Mary_Seacole).title("Mary Seacole").snippet("Building for CLINICAL SCIENCE STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Bannerman_Centre).title("Bannerman Centre"));
+                new MarkerOptions().position(Bannerman_Centre).title("Bannerman Centre").snippet("Building for ALL STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Halsbury).title("Halsbury"));
+                new MarkerOptions().position(Halsbury).title("Halsbury").snippet("Building for EDUCATION,BIOMED AND COMPUTER SCIENCE STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Lecture_Centre).title("Lecture Centre"));
+                new MarkerOptions().position(Lecture_Centre).title("Lecture Centre").snippet("Building for ALL  STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Joseph_Lowe).title("Joseph Lowe"));
+                new MarkerOptions().position(Joseph_Lowe).title("Joseph Lowe").snippet("Building for CIVIL ENGINEERING STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Gaskell).title("Heinz_Wolff"));
+                new MarkerOptions().position(Heinz_Wolff).title("Heinz_Wolff").snippet("Building for SPORT SCIENCE STUDENTS"));
 
         mMap.addMarker(
-                new MarkerOptions().position(Gaskell).title("Gaskell"));
+                new MarkerOptions().position(Gaskell).title("Gaskell").snippet("Building for PSYCHOLOGY  STUDENTS"));
 
     }
 }
+
+
+
+
 
