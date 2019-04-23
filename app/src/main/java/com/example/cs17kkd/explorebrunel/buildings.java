@@ -17,8 +17,8 @@ public class buildings extends AppCompatActivity {
         setContentView(R.layout.activity_buildings);
 
            actionBar=getSupportActionBar();//calls actionnbar
-           actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1A92A7")));//Color of the action bar
-          getSupportActionBar().setTitle("Academic");
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00e5ff")));//Color of the action bar
+        getSupportActionBar().setTitle("ACADEMIC SPACES");
           String title = actionBar.getTitle().toString();
 
         }
