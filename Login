@@ -1,0 +1,133 @@
+package com.example.loginpage;
+
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity {
+
+    private View ChangeLanguage;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        loadLocale();
+        setContentView(R.layout.activity_main);
+
+        //changes the action bar title and if it doesn't change then it will be operated as the system default language ie english
+        ActionBar Actionbar = getSupportActionBar();
+        getActionBar().setTitle(getResources().getString(R.string.app_name));
+        Button changeLang = findViewById(R.id.ChangeLanguage);
+        ChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showChangeLanguageDialog();
+                //This will display a dialog with the different language i choose and only one can be selected
+            }
+        });
+    }
+    //Creating a seperate strings.xml for the different languages
+    private void showChangeLanguageDialog() {
+        //This is an array of a string whereby the user can change the language of the page through an alert diaglog
+        final String[] listitems = {"French","عربى","日本"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+        mBuilder.setTitle("Choose Language");
+        mBuilder.setSingleChoiceItems(listitems, -1, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int a) {
+                if (a==0) {
+                    SetLocale("Fr"); //french
+                    recreate();
+                }
+                if (a==1) {
+                    SetLocale("Ar"); //Arabic
+                    recreate();
+                }
+                if (a==1) {
+                    SetLocale("Ja"); //Japan
+                    recreate();
+                }
+                //alert gets dismissed when language is chosen
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        //shows the alaert dialog
+        mDialog.show();
+
+    }
+
+    private void SetLocale(String lang) {
+Locale locale = new Locale(lang);
+Locale.setDefault(locale);
+Configuration config = new Configuration();
+config.locale = locale;
+getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+//it saves the data to the shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_lang", lang);
+        editor.apply();
+    }
+
+//it loads the language that has been saved in the shared preferences
+public void loadLocale() {
+    SharedPreferences preference = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+    String languages = preference.getString("My_lang", "");
+    SetLocale (languages);
+}
+}
+<resources>
+    <!-- To create a login page, I must create all the strings in the strings.xml file-->
+    <string name="app_name">LoginPage</string>
+
+    <string name="welcome">Welcome</string> //Welcome text
+    <string name="email">Email</string> //a text box for the user to input their email address
+    <string name="password">Password</string> //a text box for the user to input their password
+    <string name="Login">Login</string> //A button that will submit the information
+    <string name="signUp">Do not have an account? Sign Up Here</string> //a link that will take to a new page to sign up
+    <string name="ChangeLang">Change Language</string> //A button that will submit the information
+</resources>
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginPage</string>
+
+    <string name="welcome">Bienvenue</string> //Welcome text
+    <string name="email">Email</string> //a text box for the user to input their email address
+    <string name="password">mot de passe</string> //a text box for the user to input their password
+    <string name="Login">S\'identifier</string> //A button that will submit the information
+    <string name="signUp">Vous n\'avez pas de compte? Inscrivez-vous ici</string> //a link that will take to a new page to sign up
+    <string name="ChangeLang">changer de langue</string> //A button that will submit the information
+</resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginPage</string>
+
+    <string name="welcome">أهلا بك</string> //Welcome text
+    <string name="email">البريد الإلكتروني</string> //a text box for the user to input their email address
+    <string name="password">كلمه السر</string> //a text box for the user to input their password
+    <string name="Login">تسجيل الدخول</string> //A button that will submit the information
+    <string name="signUp">ليس لديك حساب؟ سجل هنا</string> //a link that will take to a new page to sign up
+    <string name="ChangeLang">غير اللغة</string> //A button that will submit the information
+</resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ログインページ</string>
+
+    <string name="welcome">ようこそ</string> //Welcome text
+    <string name="email">電子メール</string> //a text box for the user to input their email address
+    <string name="password">パスワード</string> //a text box for the user to input their password
+    <string name="Login">ログイン</string> //A button that will submit the information
+    <string name="signUp">アカウントを持っていませんか？ここでサインアップ</string> //a link that will take to a new page to sign up
+    <string name="ChangeLang">言語を変えてください</string> //A button that will submit the information
+</resources>
